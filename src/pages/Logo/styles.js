@@ -16,12 +16,22 @@ export const LogoImage2 = styled.Image`
   width: 30px;
   height: 30px;
   left: 10px;
+  top: 18px;
 `;
-
 export const TextTitle = styled.Text`
   color: #FFF;
-  margin:20px;
+  margin:15px;
   font-size: 25px;
-  letter-Spacing: 1;
   font-weight: bold;
+`;
+export const SubTitle = styled.Text`
+  color: #FFF;
+  font-size: 14px;
+`;
+export const ViewSubTitle = styled.View`
+  align-Items: center;
+  flex-direction: row;
+  background-color: #005B44;
+  margin-top: -5px;
+  margin-bottom: 5px;
 `;
