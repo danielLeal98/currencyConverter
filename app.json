@@ -2,6 +2,7 @@
   "expo": {
     "name": "Conversor de Moedas",
     "slug": "conversorMoedas",
+    "description": "Aprimorando os conhecimentos em React-native resolvi desenvolver uma aplicação simples e objetiva que permite realizar a conversão de Moedas.",
     "platforms": [
       "ios",
       "android",
