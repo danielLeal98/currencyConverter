@@ -4,7 +4,7 @@ import RNPickerSelect from 'react-native-picker-select';
 import { Dimensions } from "react-native";
 import { AntDesign } from '@expo/vector-icons'; 
 import {Container,ImageSeta,ViewSelect} from "./styles";
-import arrayMoedas from './Moedas.json';
+import ArrayMoedas from '../Select/Moedas.json';
 
 const imageWidth = Dimensions.get("window").width / 2;
 
@@ -13,10 +13,11 @@ export default class Select extends Component {
     super(props);
     this.state = {
       data: [],
-      moeda1: '',
-      moeda2: '',
-      
-    };
+      moeda1: '...',
+      moeda2: '...',
+      symbol1: '$',
+      symbol2: '$'
+    }; 
     this.calculaMoeda1 = this.calculaMoeda1.bind(this);
     this.calculaMoeda2 = this.calculaMoeda2.bind(this);
   }
@@ -24,22 +25,23 @@ export default class Select extends Component {
   componentDidUpdate(){
     this.props.recebe(this.state.moeda1, this.state.moeda2);
   }
-
   async calculaMoeda1(moeda){
     try { 
-      this.setState({moeda1: moeda});  
+      this.setState({moeda1: moeda});     
     } catch (e) {
-      //alert('Failed to clear the async storage.')
+      console.log(e);
     }
   }
 
+
   async calculaMoeda2(moeda){
-    try {
+    try {    
       this.setState({moeda2: moeda});  
     } catch (e) {
-      //alert('Failed to clear the async storage.')
+      console.log(e);
     } 
   }
+
     render() {      
       return (
         <ViewSelect>
@@ -48,23 +50,22 @@ export default class Select extends Component {
               label: 'Moeda',
               value: null,              
               color: 'black',
-              fontSize: 14,
+              fontSize: 12   ,
               fontWeight: 'bold',}}
               onValueChange={value => this.calculaMoeda1(value)}                 
-            items={arrayMoedas}
+            items={ArrayMoedas}
             style={{
               inputAndroid: {
                 backgroundColor: '#A3A3A3',
                 color: 'white',
-                fontSize: 14,              
+                fontSize: 12,              
                 width: imageWidth - 40,
                 height: 50,                                  
                 textAlign: 'center',
                 fontWeight: 'bold',  
                 margin:10,
                 borderRadius: 10                
-              },   
-              value: 'teste',          
+              },                           
               iconContainer: {
                 top: 27,
                 right: 15,
@@ -82,23 +83,22 @@ export default class Select extends Component {
               label: 'Moeda',
               value: null,              
               color: 'black',
-              fontSize: 14,
+              fontSize: 12,
               fontWeight: 'bold',}}
               onValueChange={value => this.calculaMoeda2(value)}                 
-            items={arrayMoedas}
+            items={ArrayMoedas}
             style={{
               inputAndroid: {
                 backgroundColor: '#A3A3A3',
                 color: 'white',
-                fontSize: 14,              
+                fontSize: 12,              
                 width: imageWidth - 40,
                 height: 50,                                  
                 textAlign: 'center',
                 fontWeight: 'bold',  
                 margin:10,
                 borderRadius: 10                
-              },
-              value: 'teste',
+              },              
               iconContainer: {
                 top: 27,
                 right: 15,

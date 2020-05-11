@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "conversorMoedas",
+    "name": "Conversor de Moedas",
     "slug": "conversorMoedas",
     "platforms": [
       "ios",
@@ -13,7 +13,7 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#005B44"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -21,6 +21,10 @@
     "assetBundlePatterns": [
       "**/*"
     ],
+    "android": {
+      "package": "com.conversorMoedas.ConversorDeMoedas",
+      "versionCode": 1
+    },
     "ios": {
       "supportsTablet": true
     }
